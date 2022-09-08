@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Archiving Old Workspace</title>
+		<title>Linux Commands</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -46,68 +46,88 @@
 						</ul>
 					</nav>
 					
+
+
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Archiving Old Workspace</h1>
-							
-							
-							<h3>Understanding the folder structure</h3>
-							<p> The archive space is located at /MRIArchive. It's folder structure has been organized similarly to the /MRIWork space. 
-							<br><br>For example:<br><br>
-							
-							The data in folder <code>/MRIWork/MRIWork10/pv/[user_folder]/Old/</code> should be compressed and archived in <code>/MRIArchive/MRIWork10/pv/[user_folder]/Old.tar.gz</code> location as a compressed tarball gzip file. Individuals will have writing permissions to their respective archive folders.
-                            </p>
-							
-							
-							
-							<h3>How to compress the data and archive it</h3>
-							<p> Use the <code>tar cvf</code> and <code>gzip -9</code> commands to achieve highest compression.
+                        
+                            <h1>Linux Cheatsheet</h1>
 
-							<br><br>For example:<br><br>
-
-                            <code> tar cvf - /MRIWork/MRIWork10/pv/[user_folder]/Old/ | gzip -9 -> /MRIArchive/MRIWork10/pv/[user_folder]/Old.tar.gz</code>
-
-                            </p>
-
-							<h3>Check if the backup has worked</h3>
-							<p> Use the <code>/usr/local/apps/psycapps/Archive_Old_Workspace/Check_Backup_Content.sh</code> script to check whether the backed-up content is same as the original. It is done with the help of file identifiers called <code>md5sums</code>. The script takes 2 inputs (input 1 -> path to the original folder, input 2 -> path to the Tarball archive) and produces a report. For example:</p>
+                            <h2>Basic BASH commands</h2>
+							<p> Learn basic scripting and Git. Please follow tutorials and exercises provided at <a href=https://github.com/RHULPsychology/Important_Tutorials><b>here</b></a>. To get help about how to run a bash command please type the command in the command line with the <code>--help</code> tag.
 							
-                            <code>   bash /usr/local/apps/psycapps/Archive_Old_Workspace/Check_Backup_Content.sh /MRIWork/MRIWork10/pv/[user_folder]/Old/ /MRIArchive/MRIWork10/pv/[user_folder]/Old.tar.gz </code>
+							
+							<p> Check current path (location): <br>
+							
+							<code>pwd</code>
 
-							<br><br>
-							<p> Check the Backup Report files thus created in <code>/tmp/Backup_Report-XXXXXXXXXX/</code> to check if you have successfully retrieved your backed up data. </p>
+							<p> Make a new folder(directory) at that path: <br>
 							
-													
+							<code>mkdir (mkdir -p)</code>
 							
-							<h3>Delete the original folder</h3>
-							<p> Please do not forget to remove your original folder. It would not work if you delete it from the GUI, it will just go and sit in the Trash. Use <code>rm -r</code> command for the removal of the directory. Be careful, this above process is non-reversible. Please double check if you have got the backup file properly. One simple way to do this is to check the size of the backup file with the <code>du</code> command.
+							<p> Check the content of a folder(directory): <br>
 							
-							<br><br>For example:<br><br>
+							<code>ls (ls -ll)</code>
+							
+							<p> Change the directory (navigate): <br>
+							
+							<code>cd</code>
+							
+							<p> Print on the command prompt: <br>
+							
+							<code>echo</code>
+							
+							<p> File Editor (create new file and open): <br>
+							
+							<code>nano</code>
+							
+							<p> Reverse search of all previous commands: <br>
+							
+							<code>CRTL+R and CRTL+G</code>
 
-                            <code> du -sh /MRIArchive/MRIWork10/pv/[user_folder]/Old.tar.gz</code>							
+							<p> Remove/delete files or folders: <br>
 							
-							<p>
+							<code>rm</code>
 							
-							Once you are confident remove the folder like:
+							<h3> Conditionals (What is Boolean?):</h3>
+
+                              Tutorial link: <br>
+
+                              if-else: <a href=https://linuxize.com/post/bash-if-else-statement/><b>here</b></a> <br>
+                              
+
+                              Switch-case: <a href=https://www.thegeekstuff.com/2010/07/bash-case-statement/><b>here</b></a><br>
+                              
+                              <code>if</code><br>
+
+                              <code>if - else</code><br>
+
+                              <code>if - elif - else </code>
+
+							<h3> Loop: </h3>
+
+                              Tutorial link: <br>
+
+                              for loop: <a href=https://www.cyberciti.biz/faq/bash-for-loop/><b>here</b></a> <br>
+                              
+                              while loop: <a href=https://www.cyberciti.biz/faq/bash-while-loop/><b>here</b></a><br>
+                              
+                              <code>break</code><br>
+
+                              <code>continue</code>
+                             							
+							<h3> Exercises: </h3>
 							
-							<br><br>
+							  Print your name for 5 times by writing a script. <br>
+							  Create directory structure like <code>/mnt/c/subfolder1/subfolder2/subfolder3</code>. Create <code>trial.txt</code> file under <code>subfolder3</code> and write your name for 5 times into that file by writing a script. <br>
 
-                            <code> rm -r /MRIWork/MRIWork10/pv/[user_folder]/Old/</code>							
+
+
+
+
+
 							
-							</p>
-
-
-
-							<h3>Retrieving the backup</h3>
-							<p> Change directory to where you want to retrieve your backup. Use the <code>tar xzf</code> command to extract it.
-
-							<br><br>For example:<br><br>
-							
-							<code>cd /MRIWork/MRI-Scratch</code><br>
-                            <code>tar xzf /MRIArchive/MRIWork10/pv/[user_folder]/Old.tar.gz</code>
-	
-                            </p>					
 						</div>
 					</div>
 

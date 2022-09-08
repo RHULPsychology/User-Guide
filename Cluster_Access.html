@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>RHUL Psychology User Guide</title>
+		<title>Cluster Access</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -20,10 +20,6 @@
 					<header id="header">
 						<div class="inner">
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">RHUL Psychology</span>
-								</a>
 
 							<!-- Nav -->
 								<nav>
@@ -40,23 +36,27 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="Cluster_Access.html">Cluster Access</a></li>
-							<li><a href="Archiving.html">Archiving Old Workspace</a></li>
-							<li><a href="Cluster_Access.html">Important Tutorials</a></li>
-							<li><a href="Cluster_Access.html">BIDS Conversion</a></li>
+							<li><a href="Using_CUBIC.html">Using CUBIC</a></li>
+							<li><a href="Data_Management.html">Data Management</a></li>
+							<li><a href="Training.html">Training</a></li>
+							<li><a href="Ethics.html">Ethics</a></li>
+							<li><a href="Cluster.html">Cluster</a></li>
+							<li><a href="Publications.html">Publications</a></li>
+							<li><a href="Resources.html">Resources</a></li>
 						</ul>
 					</nav>
 					
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Cluster Access</h1>
-							<h3>Architecture</h3>
-							<p> The cluster is a high performance computational infrastructure which is comprised of a cluster of individual computers or nodes. Each node serves a specific purpose and in our architecture there are 3 different types of nodes namely, login nodes, master node and worker nodes. In the RHUL cluster, there are 2 login nodes and as the name suggests the login nodes' function is to log on the user to the cluster. There is 1 master node for the cluster which distributes and allocates computational jobs to the 4 worker nodes in the cluster.</p>
-							
-							<span class="image main"><img src="images/cluster_arch.jpg" alt="" /></span>
 
-							<h3>Access through psyclogin</h3>
+                            <h1>Cluster Access</h1>
+							<h2>Access through SSH (psyclogin02)</h2>
+							<p> This login node can be accessed through the Command Line Interface (CLI) directly while operating from a local PC on campus and through VPN for off-campus use. Upon opening the Terminal (CMD prompt Windows) please issue the following command to access the node.<br><code>ssh[college_ID]@psyclogin02.rhul.ac.uk</code>. When prompted enter your password and hit the <i>Return </i> key to log you on to the cluster through the CLI.
+							
+
+
+							<h2>GUI Access (psyclogin)</h2>
 							<p> The psyclogin node is to be used for cluster access if it is required for GUI (Graphical User Interface) tools on the cluster. This node is provided with high-performance graphics drivers for this. psyclogin can be accessed through Microsoft Windows Remote Desktop Server. This Remote Desktop Server can be accessed directly while operating from a local PC on campus and for off-campus access is granted only through VPN (details of VPN access is provided <b><a href="https://intranet.royalholloway.ac.uk/students/help-support/it-services/access-off-campus/vpn/vpn.aspx">here</a></b>). After connecting to the VPN use the Remote Desktop Connection software (Windows RDP / Ubuntu Remmina) and connect to the Microsoft Windows Remote Desktop Server( server address: <i>prod-mrirdp01.rhul.ac.uk </i>). Use your college ID and password and domain as <i>cc</i> to log on to the WIndows Server. After sucessfully logging on to the RDP server you will find the <i> VNCViewer </i> application for accessing the cluster with GUI and <i> putty </i> application for logging on with command line interface (CLI) using Secure Shell (SSH).</p>
 							
 							
@@ -68,10 +68,8 @@
 							<p><b>Create VNC Session:</b> A <code>[VNC_session_number]</code> can be created upon logging on to <b>psyclogin.rhul.ac.uk</b> through <b>putty</b>. From the CLI use the command <code>vncserver</code> and it will create a <code>[VNC_session_number]</code>. This command is to be used only if you haven't had a VNC session number before, otherwise you can use the previously created session ID.
 							
 							
-							<h3>Access through psyclogin02</h3>
-							<p> This login node can be accessed through the Command Line Interface (CLI) directly while operating from a local PC on campus and through VPN for off-campus use. Upon opening the Terminal (CMD prompt Windows) please issue the following command to access the node.<br><code>ssh[college_ID]@psyclogin02.rhul.ac.uk</code>. When prompted enter your password and hit the <i>Return </i> key to log you on to the cluster through the CLI.
-							
-							<h3>Use of Storage on Cluster</h3>
+
+							<h2>Use of Storage on Cluster</h2>
 							<p> Generally the workspace/folder of individual users on the cluster are created under the workspace of individual PIs. </p>
 
 					
