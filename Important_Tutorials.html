@@ -54,23 +54,37 @@
                         
                             <h1>Important Tutorials</h1>
                             
-                            The following are some of the commands that might be needed for data analysis on the cluster. 
+                            <p>The following are some of the commands that might be needed for data analysis on the cluster. </p>
                             
                             <h3>Convert data from DICOM to NIFTI</h3>
+                            <p>On the cluster <code>dcm2niix</code> is used for conversion of raw DICOM data into Nifti. In order to use the functionality, the conda virtual environment needs to be activated on the cluster with the command <code>source /usr/local/apps/psycapps/config/conda_bash_update dcm2niix</code>. Locate where the raw data from the scanner has been saved for the particular scans. The raw data is under <code>/MRIRaw/MRIRaw[PI_workspace_number]</code>. Please confirm with <a href="mailto:ari.lingeswaran@rhul.ac.uk">Ari</a> about the exact location of the raw data. Create an output folder in the corresponding workspace <code>/MRIWork/MRIWork[PI_workspace_number]/[user_folder]</code>. For example For example <code>/MRIWork/MRIWork10/pv/[user_folder]</code> is a sample workspace where the output folder needs to be created. Then the following command will be issued to perform the Dicom to Nifti Conversion. <br><code>dcm2niix -z y -f %p_%t_%s -o [output_folder] [dicom_directory_in_MRIRaw]</code>
+</p>
+
+                            <h3>Use Git on the cluster</h3>
+                            <p>For using Git on the cluster issue the command <code>source /usr/local/apps/psycapps/config/conda_bash_update</code>. If you are new to git, please follow the following video links to get yourself familiarised with basics of Git. The videos are targeted to an audience with no prior programming or version controlling experience.</p>
                             
-                            Use 
+                            <p>Github Introduction: <a href="https://youtu.be/BCQHnlnPusY"><b>Link</b></a></p>
+                            <p>Github Branches: <a href="https://youtu.be/oPpnCh7InLY"><b>Link</b></a></p>
+                            <p>Github Forks and Pull Requests: <a href="https://youtu.be/_NrSWLQsDL4"><b>Link</b></a></p>                         
+                          
+                           
+                            <h3>Use SPM and FSL on the cluster</h3>
+<p>For using SPM and FSL GUI on the cluster, you need to access the cluster through VNC viewer. Please refer to the Cluster Access section for the details of how to use GUI for accessing the cluster. After loggin on through VNC issue the command <code>source /usr/local/apps/psycapps/config/matlab_bash_update 2019a</code> in the terminal. This would select the required version of Matlab on the cluster. With the command <code>matlab</code> in the terminal the Matlab window will open. The corresponding SPM packages can be downloaded from this <a href="https://www.fil.ion.ucl.ac.uk/spm/software/download/"><b>link</b></a>. </p>
 
-                            <h3>Running Matlab with job scheduler</h3>
-
-							
+                        
+<p>FSL 6 is also installed on the cluster. The FSL GUI can be operated by the command <code>fsl</code> from the terminal.</p>
+                            
+                                                                                 
 							<h3>Running Heudiconv BIDS conversion</h3>
+                            <p> Heudiconv or Heuristics-based Dicom Conversion pipeline is implemented on the cluster which converts raw DICOM data into <a href="https://bids.neuroimaging.io/"><b>BIDS</b></a>format, ready for open science data sharing platforms. The codebase on the cluster can be found <a href="https://github.com/RHULPsychology/HeudiConv_BIDS_conversion"><b>here</b></a>. For users who want to try it out themselves there is a very handy tutorial with an example <a href="https://youtu.be/O1kZAuR7E00"><b>here</b></a>. For other users please contact <a href="mailto:ayan.sengupta@rhul.ac.uk"><b>Ayan</b></a> for setting up a specific pipeline for the required conversion.
+                            
+                            </p>
 
+                            <h3>Running job scheduler</h3>
+                            
+<p>The cluster is a combination of High Performance Computational nodes meant for big data analysis and parallel processing. Ideally all R, SPM (Matlab) and FSL analysis should be run parallely on the worker nodes of the cluster which makes the performance much faster. The maintainance of the job queue on the worker nodes is done by a job scheduler software Sun Grid Engine. All users are encouraged to run all SPM or FSL analysis scripts in this fashion with the help of BASH wrapper scripts and submit scripts. All BASH scripts that is needed for using the job scheduler are available <a href="https://github.com/RHULPsychology/R_Cluster_Template"><b>here</b></a>, <a href="https://github.com/RHULPsychology/SPM_Cluster_Template"><b>here</b></a> and <a href="https://github.com/RHULPsychology/FSL_Cluster_Template"><b>here</b></a>. Please contact <a href="mailto:ayan.sengupta@rhul.ac.uk"><b>Ayan</b></a> for setting up specific scripts for the required parallelization.
 
-							<h3>Running Python with job scheduler</h3>
-
-                            <h3>Running Python with job scheduler</h3>							
-
-
+</p>
 							
 						</div>
 					</div>
